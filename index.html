@@ -1,78 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="az">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PricelessCore Marketplace</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <title>PricelessCore İlan Sistemi</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 font-[Inter]">
+<body class="bg-gray-100 font-sans">
+
   <!-- Header -->
   <header class="bg-white shadow p-4 flex justify-between items-center sticky top-0 z-50">
-    <h1 class="text-2xl font-bold text-blue-600">PricelessCore</h1>
-    <input type="text" placeholder="Ürün ara..." class="border p-2 rounded w-1/2">
-    <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Giriş Yap</button>
+    <h1 class="text-2xl font-bold text-blue-700">PricelessCore</h1>
+    <div class="flex gap-2 w-1/2">
+      <input type="text" placeholder="Nə axtarırsınız?" class="border w-full p-2 rounded">
+      <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Axtar</button>
+    </div>
+    <button class="text-blue-600 font-semibold">Giriş</button>
   </header>
 
   <!-- Categories -->
-  <section class="bg-white py-4 px-6 mt-4 shadow">
-    <div class="flex gap-4 overflow-x-auto">
-      <button class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Elektronik</button>
-      <button class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Moda</button>
-      <button class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Ev & Yaşam</button>
-      <button class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Spor</button>
-      <button class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Kozmetik</button>
-      <button class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Oyunlar</button>
+  <section class="bg-white px-6 py-3 shadow mt-2">
+    <div class="flex flex-wrap gap-3">
+      <button class="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300">Avtomobil</button>
+      <button class="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300">Telefon</button>
+      <button class="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300">Mebel</button>
+      <button class="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300">Geyim</button>
+      <button class="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300">Əmlak</button>
+      <button class="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300">Elektronika</button>
     </div>
   </section>
 
-  <!-- Banner -->
-  <section class="mt-6 text-center">
-    <img src="https://source.unsplash.com/1600x400/?sale,shopping" class="w-full rounded shadow" alt="Kampanya">
-  </section>
-
-  <!-- Product Grid -->
+  <!-- Listings -->
   <section class="p-6">
-    <h2 class="text-xl font-bold mb-4">Popüler Ürünler</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <!-- Card -->
-      <div class="bg-white p-4 rounded shadow hover:scale-105 transition-transform">
-        <img src="https://source.unsplash.com/200x200/?watch" class="w-full h-40 object-cover" alt="Ürün">
-        <h3 class="mt-2 text-sm font-semibold">Lüks Kol Saati</h3>
-        <p class="text-green-600 font-bold">$49.99</p>
-        <button class="bg-blue-600 text-white w-full mt-2 py-1 rounded hover:bg-blue-700">Sepete Ekle</button>
+    <h2 class="text-xl font-bold mb-4">Yeni elanlar</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Ad Card -->
+      <div class="bg-white p-4 rounded shadow hover:shadow-lg">
+        <img src="https://source.unsplash.com/400x300/?car" alt="Avtomobil" class="rounded mb-2">
+        <h3 class="text-lg font-semibold">Hyundai Sonata 2013</h3>
+        <p class="text-gray-600">16,500 AZN</p>
+        <p class="text-sm text-gray-500">Bakı • Bu gün</p>
       </div>
 
-      <!-- Card 2 -->
-      <div class="bg-white p-4 rounded shadow hover:scale-105 transition-transform">
-        <img src="https://source.unsplash.com/200x200/?shoes" class="w-full h-40 object-cover" alt="Ürün">
-        <h3 class="mt-2 text-sm font-semibold">Erkek Spor Ayakkabı</h3>
-        <p class="text-green-600 font-bold">$39.99</p>
-        <button class="bg-blue-600 text-white w-full mt-2 py-1 rounded hover:bg-blue-700">Sepete Ekle</button>
+      <div class="bg-white p-4 rounded shadow hover:shadow-lg">
+        <img src="https://source.unsplash.com/400x300/?phone" alt="Telefon" class="rounded mb-2">
+        <h3 class="text-lg font-semibold">iPhone 13 Pro Max</h3>
+        <p class="text-gray-600">1,950 AZN</p>
+        <p class="text-sm text-gray-500">Gəncə • Dünən</p>
       </div>
 
-      <!-- Card 3 -->
-      <div class="bg-white p-4 rounded shadow hover:scale-105 transition-transform">
-        <img src="https://source.unsplash.com/200x200/?headphones" class="w-full h-40 object-cover" alt="Ürün">
-        <h3 class="mt-2 text-sm font-semibold">Kablosuz Kulaklık</h3>
-        <p class="text-green-600 font-bold">$29.99</p>
-        <button class="bg-blue-600 text-white w-full mt-2 py-1 rounded hover:bg-blue-700">Sepete Ekle</button>
+      <div class="bg-white p-4 rounded shadow hover:shadow-lg">
+        <img src="https://source.unsplash.com/400x300/?sofa" alt="Mebel" class="rounded mb-2">
+        <h3 class="text-lg font-semibold">Künc divanı</h3>
+        <p class="text-gray-600">850 AZN</p>
+        <p class="text-sm text-gray-500">Sumqayıt • 2 gün əvvəl</p>
       </div>
 
-      <!-- Card 4 -->
-      <div class="bg-white p-4 rounded shadow hover:scale-105 transition-transform">
-        <img src="https://source.unsplash.com/200x200/?makeup" class="w-full h-40 object-cover" alt="Ürün">
-        <h3 class="mt-2 text-sm font-semibold">Kadın Makyaj Seti</h3>
-        <p class="text-green-600 font-bold">$24.99</p>
-        <button class="bg-blue-600 text-white w-full mt-2 py-1 rounded hover:bg-blue-700">Sepete Ekle</button>
+      <div class="bg-white p-4 rounded shadow hover:shadow-lg">
+        <img src="https://source.unsplash.com/400x300/?apartment" alt="Əmlak" class="rounded mb-2">
+        <h3 class="text-lg font-semibold">3 otaqlı mənzil - 9-cu mikrorayon</h3>
+        <p class="text-gray-600">135,000 AZN</p>
+        <p class="text-sm text-gray-500">Bakı • Bu gün</p>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-white text-center p-4 mt-8 shadow-inner">
-    <p class="text-sm">&copy; 2025 PricelessCore Tüm hakları saklıdır.</p>
+  <footer class="bg-white text-center text-sm text-gray-600 p-4 mt-10">
+    &copy; 2025 PricelessCore.az - Bütün hüquqlar qorunur.
   </footer>
+
 </body>
 </html>

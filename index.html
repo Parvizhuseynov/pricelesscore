@@ -1,48 +1,70 @@
-index.html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pricelesscore</title>
-  <style>
-    body {
-      background-color: #0a0a23;
-      color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 50px;
-      text-align: center;
-    }
-    h1 {
-      font-size: 48px;
-      color: #00ffcc;
-    }
-    p {
-      font-size: 20px;
-      color: #cccccc;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 15px 30px;
-      background-color: #00ffcc;
-      color: #000;
-      font-weight: bold;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      background-color: #00cc99;
-    }
-  </style>
-</head>
-<body>
-  <h1>Welcome to Pricelesscore</h1>
-  <p>Your next-gen eCommerce experience is coming soon.</p>
-  <a href="#" class="btn">Get Notified</a>
-</body>
-</html>
+// Bu yapı Tailwind + Next.js mimarisi için optimize edilmiştir.
+// Çok dilli destek, ödeme ikonları, kategori ve ürün kutuları hazırdır.
+// Vercel ile deploy edilebilir, ileride çoklu dil ve ödeme entegrasyonları eklenebilir.
 
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Globe, ShoppingCart } from "lucide-react";
+import { motion } from "framer-motion";
+
+export default function HomePage() {
+  return (
+    <main className="min-h-screen bg-gray-100 p-4">
+      {/* Banner / Hero Section */}
+      <section className="relative bg-gradient-to-r from-blue-900 to-purple-800 text-white p-10 rounded-2xl shadow-xl">
+        <h1 className="text-4xl font-bold mb-2">Pricelesscore</h1>
+        <p className="text-lg max-w-xl">Welcome to your next-gen global eCommerce platform — Sell. Connect. Expand.</p>
+        <div className="mt-6">
+          <Button className="text-lg px-6 py-3">Explore Products</Button>
+        </div>
+      </section>
+
+      {/* Payment Icons */}
+      <section className="my-10 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4 text-center">
+        {["PayPal", "Visa", "MasterCard", "Crypto", "Stripe", "Payoneer"].map(method => (
+          <div key={method} className="bg-white rounded-xl p-4 shadow hover:scale-105 transition">
+            <Globe className="mx-auto mb-2" />
+            <span className="text-sm font-semibold">{method}</span>
+          </div>
+        ))}
+      </section>
+
+      {/* Kategoriler */}
+      <section className="mb-8">
+        <h2 className="text-2xl font-bold mb-4">Kategoriler</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {["Elektronik", "Moda", "Ev Ürünleri", "Spor", "Aksesuar", "Kozmetik"].map(cat => (
+            <Card key={cat} className="hover:shadow-lg cursor-pointer">
+              <CardContent className="p-4 text-center">
+                <div className="text-xl font-semibold">{cat}</div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Ürünler */}
+      <section>
+        <h2 className="text-2xl font-bold mb-4">Popüler Ürünler</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {[1, 2, 3, 4, 5, 6].map(num => (
+            <Card key={num} className="hover:shadow-xl">
+              <CardContent className="p-2">
+                <img
+                  src={`https://via.placeholder.com/200x150?text=Ürün+${num}`}
+                  alt={`Ürün ${num}`}
+                  className="w-full h-[150px] object-cover rounded-lg"
+                />
+                <div className="mt-2 text-sm">Ürün Başlığı {num}</div>
+                <div className="font-bold text-lg">$19.99</div>
+                <Button size="sm" className="mt-2 w-full">
+                  <ShoppingCart className="mr-1 h-4 w-4" /> Sepete Ekle
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+    </main>
+  );
+}

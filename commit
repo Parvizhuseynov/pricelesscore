@@ -1,0 +1,3 @@
+git add .
+git commit -m "Add LocalStockManager frontend and backend"
+git push origin main
